@@ -6,11 +6,14 @@ import { sendPromptToGemini } from './send';
 import logo from './assets/logo.jpg';
 
 function App() {
+  const chatHistory = useSelector((state) => state.chatHistory.chatHistory);
+  
   const [text, setText] = useState('');
   const [prompt, setPrompt] = useState('');
-  const chatHistory = useSelector((state) => state.chatHistory.chatHistory);
+  
   const dispatch = useDispatch();
   useEffect(() => {
+    
     console.log('Updated chatHistory:', chatHistory);
   }, [chatHistory]);
   const handleSubmit = async () => {
@@ -22,9 +25,9 @@ function App() {
       payload: { text, position: 'right' },
     });
     
-
+    const combinedText = chatHistory.map(item => item.text).join('\n');
     // Update the prompt
-    const updatedPrompt = prompt + text;
+    const updatedPrompt = combinedText +"Now you'r Kapil Modi and text after this you have to answer it and dont write as if i am kapil modi or something as after this interviewer is asking question about me from you"+ text;
     setPrompt(updatedPrompt);
 
     try {
@@ -54,18 +57,21 @@ function App() {
       <header className="bg-blue-600 text-white p-4 flex items-center">
         <div className="flex items-center space-x-4">
           <img src={logo} alt="Logo" className="h-10 w-10 rounded-full" />
-          <h1 className="text-2xl font-bold">AI Help: Code Genie</h1>
+          <h1 className="text-2xl font-bold">Resume: Kapil Modi</h1>
         </div>
       </header>
       <main className="p-6 bg-gray-100 min-h-screen">
-        <h1 className="text-xl font-semibold mb-4">AI's solution will appear here...</h1>
+        <h1 className="text-xl font-semibold mb-4">Ask about my resume</h1>
         <div
           id="ai-solution"
           className="bg-white shadow-md rounded-lg p-4 mb-6 overflow-y-auto max-h-96"
         >
+          
           {Array.isArray(chatHistory) && chatHistory.map((item, index) => (
-  <Chat key={index} text={item.text} position={item.position} />
-))}
+            <div key={index} className="chat-wrapper">
+              <Chat text={item.text} position={item.position} />
+            </div>
+          ))}
         </div>
 
         <textarea

@@ -1,31 +1,48 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import Markdown from 'react-markdown';
+import rehypeHighlight from 'rehype-highlight';
+import 'highlight.js/styles/github.css'; // Import a highlight.js theme
+import './chat.css';
+import remarkGfm from 'remark-gfm';
 
-const Chat = ({key,text,position}) => {
+const Chat = ({ text, position }) => {
     return (
-        <div>
-            <div className={`chat-bubble ${position}`} id={key}>
-                <p >{text}</p>
+        <div
+            className={`chat-container ${
+                position === 'left' ? 'left' : 'right'
+            }`}
+        >
+            <div className="chat-bubble">
+                <Markdown
+                    rehypePlugins={[rehypeHighlight]}
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                        p: ({ node, ...props }) => (
+                            <p className="markdown-content" {...props} />
+                        ),
+                        code: ({ node, inline, className, children, ...props }) => (
+                            <code
+                                className={`markdown-code ${className || ''}`}
+                                {...props}
+                            >
+                                {children}
+                            </code>
+                        ),
+                        table: ({ node, ...props }) => (
+                            <table className="markdown-table" {...props} />
+                        ),
+                        th: ({ node, ...props }) => (
+                            <th className="markdown-table-header" {...props} />
+                        ),
+                        td: ({ node, ...props }) => (
+                            <td className="markdown-table-cell" {...props} />
+                        ),
+                    }}
+                >
+                    {text}
+                </Markdown>
             </div>
-            <style jsx>{`
-                .chat-bubble {
-                    max-width: 60%;
-                    padding: 10px;
-                    margin: 10px 0;
-                    border-radius: 10px;
-                    font-size: 14px;
-                    line-height: 1.5;
-                }
-                .chat-bubble.left {
-                    background-color: #e0e0e0;
-                    color: #000;
-                    align-self: flex-start;
-                }
-                .chat-bubble.right {
-                    background-color: #0078d4;
-                    color: #fff;
-                    align-self: flex-end;
-                }
-            `}</style>
         </div>
     );
 };

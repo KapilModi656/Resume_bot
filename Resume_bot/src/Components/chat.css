@@ -1,0 +1,80 @@
+/* Container for chat messages */
+
+/* Table styles */
+.markdown {
+    table {
+      border-collapse: collapse;
+    }
+  
+    th,
+    td {
+      padding: 6px 13px;
+      border: 1px solid black;
+    }
+  
+    p {
+      line-height: 1.5;
+    }
+  }
+  
+.markdown-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .markdown-table th,
+  .markdown-table td {
+    border: 1px solid #d1d5db; /* Tailwind's border-gray-300 */
+    padding: 0.5rem; /* Tailwind's p-2 */
+    text-align: left; /* Align text to the left */
+  }
+  
+  .markdown-table th {
+    background-color: #f3f4f6; /* Tailwind's bg-gray-100 */
+    font-weight: bold; /* Tailwind's font-bold */
+  }
+  
+  .markdown-table td {
+    background-color: #ffffff; /* Tailwind's bg-white */
+  }
+.chat-container {
+    display: flex;
+    margin-bottom: 1rem; /* Tailwind's mb-4 */
+  }
+  
+  /* Align chat messages based on position */
+  .chat-container.left {
+    justify-content: flex-start; /* Tailwind's justify-start */
+  }
+  
+  .chat-container.right {
+    justify-content: flex-end;
+     /* Tailwind's justify-end */
+    
+  }
+  
+  /* Chat bubble styles */
+  .chat-bubble {
+    background-color: #e5e7eb; /* Tailwind's bg-gray-200 */
+    padding: 1rem; /* Tailwind's p-4 */
+    border-radius: 0.5rem; /* Tailwind's rounded-lg */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tailwind's shadow-md */
+    max-width: 20rem;
+    min-height: auto; /* Tailwind's max-w-xs */
+    word-wrap: break-word; /* Ensure long words break */
+  }
+  .chat-container.left .chat-bubble {
+    max-width: 50rem; /* Increase width for left-positioned chat bubbles */
+  }
+  .chat-container.right .chat-bubble {
+    background-color: blue;
+     /* Decrease width for right-positioned chat bubbles */
+    color: white;
+  }
+  
+  /* Markdown content inside chat bubble */
+  .chat-bubble .markdown-content {
+    font-size: 1rem; /* Tailwind's text-base */
+    line-height: 1.5; /* Tailwind's leading-relaxed */
+  }

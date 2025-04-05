@@ -1,3 +1,85 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Header styles */
+header {
+    background-color: #2563eb; /* Tailwind's bg-blue-600 */
+    color: white; /* Tailwind's text-white */
+    padding: 1rem; /* Tailwind's p-4 */
+    display: flex; /* Tailwind's flex */
+    align-items: center; /* Tailwind's items-center */
+  }
+  
+  header .logo-container {
+    display: flex; /* Tailwind's flex */
+    align-items: center; /* Tailwind's items-center */
+    gap: 1rem; /* Tailwind's space-x-4 */
+  }
+  
+  header img {
+    height: 2.5rem; /* Tailwind's h-10 */
+    width: 2.5rem; /* Tailwind's w-10 */
+    border-radius: 9999px; /* Tailwind's rounded-full */
+  }
+  
+  header h1 {
+    font-size: 1.5rem; /* Tailwind's text-2xl */
+    font-weight: bold; /* Tailwind's font-bold */
+  }
+  
+  /* Main content styles */
+  main {
+    padding: 1.5rem; /* Tailwind's p-6 */
+    background-color: #f3f4f6; /* Tailwind's bg-gray-100 */
+    min-height: 100vh; /* Tailwind's min-h-screen */
+  }
+  
+  main h1 {
+    font-size: 1.25rem; /* Tailwind's text-xl */
+    font-weight: 600; /* Tailwind's font-semibold */
+    margin-bottom: 1rem; /* Tailwind's mb-4 */
+  }
+  
+  /* AI solution container */
+  #ai-solution {
+    background-color: white; /* Tailwind's bg-white */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tailwind's shadow-md */
+    border-radius: 0.5rem; /* Tailwind's rounded-lg */
+    padding: 1rem; /* Tailwind's p-4 */
+    margin-bottom: 1.5rem; /* Tailwind's mb-6 */
+    overflow-y: auto; /* Tailwind's overflow-y-auto */
+    max-height: 24rem; /* Tailwind's max-h-96 */
+  }
+  
+  /* Textarea styles */
+  #input-data {
+    width: 100%; /* Tailwind's w-full */
+    padding: 0.75rem; /* Tailwind's p-3 */
+    border: 1px solid #d1d5db; /* Tailwind's border-gray-300 */
+    border-radius: 0.5rem; /* Tailwind's rounded-lg */
+    margin-bottom: 1rem; /* Tailwind's mb-4 */
+    outline: none; /* Tailwind's focus:outline-none */
+  }
+  
+  #input-data:focus {
+    border-color: #3b82f6; /* Tailwind's focus:ring-blue-500 */
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Tailwind's focus:ring-2 */
+  }
+  
+  /* Button styles */
+  #submit-button {
+    background-color: #2563eb; /* Tailwind's bg-blue-600 */
+    color: white; /* Tailwind's text-white */
+    padding: 0.5rem 1.5rem; /* Tailwind's px-6 py-2 */
+    border-radius: 0.5rem; /* Tailwind's rounded-lg */
+    transition: background-color 0.2s; /* Tailwind's transition */
+  }
+  
+  #submit-button:hover {
+    background-color: #1d4ed8; /* Tailwind's hover:bg-blue-700 */
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #1f2937; /* Tailwind's bg-gray-800 */
+    color: white; /* Tailwind's text-white */
+    text-align: center; /* Tailwind's text-center */
+    padding: 1rem; /* Tailwind's p-4 */
+  }
