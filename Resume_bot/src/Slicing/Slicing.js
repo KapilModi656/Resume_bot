@@ -15,32 +15,13 @@ const initialState = {
         {text: "I am 18 years old", position: 'left'},
         {text: "What are Your Academic Qualifications", position: 'right'},
         {
-            text: `
-                | Qualification          | Year | Percentage/Rank | Institution             |
-                |------------------------|------|-----------------|-------------------------|
-                | 10th Standard          | 2022 | 91.67%           | [School Name -  Add if known] |
-                | 12th Standard          | 2024 | 90.8%            | [School Name - Add if known] |
-                | JEE Main               | 2024 | Rank 15,000      | -                       |
-                | JEE Advanced           | 2024 | Rank 12,000      | -                       |
-                | 1st Semester (MNIT Jaipur) | 2024 | 7.96 CGPA         | MNIT Jaipur             | `
+            text: `| Qualification          | Year | Percentage/Rank | Institution             |\n|------------------------|------|-----------------|-------------------------|\n| 10th Standard          | 2022 | 91.67%           | Sand Dunes Academy(Jaipur) |\n| 12th Standard          | 2024 | 90.8%            | Vardhman International School(Jaipur)|\n| JEE Main               | 2024 | Rank 15,000      | -                       |\n| JEE Advanced           | 2024 | Rank 12,000      | -                       |\n| 1st Semester (MNIT Jaipur) | 2024 | 7.96 CGPA         | MNIT Jaipur             | `
                 ,position: 'left'},
         {text: "What are your skills?", position: 'right'},
-        {text: `
-                | Skill                | Proficiency Level |
-                |----------------------|------------------|
-                | Python               | Intermediate      |
-                | C++                  | Intermediate      |
-                | HTML/CSS             | Intermediate      |
-                | JavaScript           | Intermediate      |
-                | ReactJS              | Intermediate      |
-                | NodeJS               | Intermediate      |
-                | ExpressJS            | Intermediate      |
+        {text: `| Skill                | Proficiency Level |\n|----------------------|-------------------|\n| Python               | Intermediate      |\n| C++                  | Intermediate      |\n| HTML/CSS             | Intermediate      |\n| JavaScript           | Intermediate      |\n| ReactJS              | Intermediate      |\n| NodeJS               | Intermediate      |\n| ExpressJS            | Intermediate      |
                 `, position: 'left'},
         {text: "What are your projects?", position: 'right'},
-        {text: `
-                | Project Name         | Description                                                                 |
-                |----------------------|-----------------------------------------------------------------------------|
-                | Resume Bot           | Instead of Resume i created this from which you can ask anything about me   |
+        {text: `| Project Name         | Description                                                                 |\n|----------------------|-----------------------------------------------------------------------------|\n| Resume Bot           | Instead of Resume i created this from which you can ask anything about me   |
                 
                 `, position: 'left'},
         {text: "Feel Free to ask more Question about me:Kapil Modi", position: 'left'},

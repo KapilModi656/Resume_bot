@@ -13,8 +13,15 @@
     }
   
     p {
-      line-height: 1.5;
+      line-height: 2;
     }
+  }
+  .chat-bubble:hover {
+    transform: scale(1.05); /* Slightly enlarge the bubble */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for both transform and shadow */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    background-color: #d1d5db; /* Slightly darker background for hover effect */
+    cursor: pointer; /* Change cursor to pointer */
   }
   
 .markdown-table {
@@ -57,7 +64,7 @@
   /* Chat bubble styles */
   .chat-bubble {
     background-color: #e5e7eb; /* Tailwind's bg-gray-200 */
-    padding: 1rem; /* Tailwind's p-4 */
+    padding: 1.5rem; /* Tailwind's p-4 */
     border-radius: 0.5rem; /* Tailwind's rounded-lg */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tailwind's shadow-md */
     max-width: 20rem;
