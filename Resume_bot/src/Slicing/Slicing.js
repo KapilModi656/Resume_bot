@@ -21,7 +21,7 @@ const initialState = {
         {text: `| Skill                | Proficiency Level |\n|----------------------|-------------------|\n| Python               | Intermediate      |\n| C++                  | Intermediate      |\n| HTML/CSS             | Intermediate      |\n| JavaScript           | Intermediate      |\n| ReactJS              | Intermediate      |\n| NodeJS               | Intermediate      |\n| ExpressJS            | Intermediate      |
                 `, position: 'left'},
         {text: "What are your projects?", position: 'right'},
-        {text: `| Project Name         | Description                                                                 |\n|----------------------|-----------------------------------------------------------------------------|\n| Resume Bot           | Instead of Resume i created this from which you can ask anything about me   |
+        {text: `| Project Name         | Description                                                                 |Github-Link                |\n|----------------------|-----------------------------------------------------------------------------|--------------------------------|\n| Resume Bot           | Instead of Resume i created this from which you can ask anything about me   |[Resume-Bot](https://github.com/KapilModi656/Resume_bot) |
                 
                 `, position: 'left'},
         {text: "Feel Free to ask more Question about me:Kapil Modi", position: 'left'},
