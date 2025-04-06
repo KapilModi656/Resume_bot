@@ -11,9 +11,9 @@ const port = process.env.port || 3000
 // Middleware
 app.use(cors());
 app.use(express.json());
-
+console.log('API Key:', process.env.API_KEY);
 // Define the Gemini API URL
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + process.env.API_KEY;
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + process.env.API_KEY;
 
 // POST endpoint to handle requests from the client
 app.post('/api/gemini', async (req, res) => {
