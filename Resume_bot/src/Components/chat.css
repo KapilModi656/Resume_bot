@@ -23,6 +23,14 @@
     background-color: #d1d5db; /* Slightly darker background for hover effect */
     cursor: pointer; /* Change cursor to pointer */
   }
+  .chat-container.right .chat-bubble:hover {
+    transform: scale(1.05); /* Slightly enlarge the bubble */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background-color: darkblue; /* Darker background for right-positioned chat bubble on hover */
+    /* Darker background for right-positioned chat bubble on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    cursor: pointer; 
+  }
   
 .markdown-table {
     width: 100%;
@@ -75,7 +83,7 @@
     max-width: 50rem; /* Increase width for left-positioned chat bubbles */
   }
   .chat-container.right .chat-bubble {
-    background-color: blue;
+    background-color: #3939e7;
      /* Decrease width for right-positioned chat bubbles */
     color: white;
   }
