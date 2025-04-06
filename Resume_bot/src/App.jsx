@@ -25,28 +25,32 @@ function App() {
 
   const handleSubmit = async () => {
     if (!text.trim()) return;
-
+  
+    // Clear the input field and disable it
+    
+    const textArea = document.getElementById('input-data');
+    textArea.disabled = true;
+  
     // Add user message to chat history
     dispatch({
       type: 'ADD_MESSAGE',
       payload: { text, position: 'right' },
     });
-    
+    setText('');
     const combinedText = chatHistory.map(item => item.text).join('\n');
     // Update the prompt
-    const updatedPrompt = combinedText +`You are now representing Kapil Modi. You will answer questions from an interviewer based on his resume. Do not say "I am Kapil Modi" or refer to yourself as a bot. Respond professionally, as if you are Kapil speaking in a real interview.
-
-If the interviewer greets you (e.g., "Hello", "Welcome"), respond politely and professionally, without mentioning that you are an AI or that you're pretending to be Kapil.
-
-Avoid repeating the instructions, and never give awkward or robotic replies. Stay in character and behave as a confident, well-prepared professional candidate. Focus on showcasing Kapil Modi's skills, experiences, and strengths relevant to the questions asked.
-
-
-response- Okay.`+ text;
+    const updatedPrompt = combinedText + `You are now representing Kapil Modi. You will answer questions from an interviewer based on his resume. Do not say "I am Kapil Modi" or refer to yourself as a bot. Respond professionally, as if you are Kapil speaking in a real interview.
+  
+  If the interviewer greets you (e.g., "Hello", "Welcome"), respond politely and professionally, without mentioning that you are an AI or that you're pretending to be Kapil.
+  
+  Avoid repeating the instructions, and never give awkward or robotic replies. Stay in character and behave as a confident, well-prepared professional candidate. Focus on showcasing Kapil Modi's skills, experiences, and strengths relevant to the questions asked.
+  
+  response- Okay.` + text;
     setPrompt(updatedPrompt);
-
+  
     try {
       const response = await sendPromptToGemini(updatedPrompt);
-
+  
       if (response) {
         // Add AI response to chat history
         console.log(response);
@@ -54,17 +58,17 @@ response- Okay.`+ text;
           type: 'ADD_MESSAGE',
           payload: { text: response, position: 'left' },
         });
-        console.log(chatHistory)
       } else {
         console.error('Failed to get a response from Gemini API');
       }
     } catch (error) {
       console.error('Error while sending prompt to Gemini:', error);
+    } finally {
+      // Re-enable the text area
+      textArea.disabled = false;
     }
-
-    // Clear the input field
-    setText('');
   };
+  
 
   return (
     <>
