@@ -2,18 +2,23 @@ import express from 'express';
 import cors from 'cors';
 import axios from 'axios';
 import dotenv from 'dotenv';
-dotenv.config();
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+dotenv.config({path: path.resolve(__dirname, '../../.env')});
 
-
+const API_KEY = process.env.API_KEY;
 const app = express();
-const port = process.env.port || 3000
-
+const port = process.env.PORT || 3000
+console.log('Server port:', port);
 // Middleware
 app.use(cors());
 app.use(express.json());
-console.log('API Key:', process.env.API_KEY);
+console.log('Environment Variables:', process.env);
+console.log('API Key from .env:', API_KEY);
 // Define the Gemini API URL
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + process.env.API_KEY;
+const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;;
 
 // POST endpoint to handle requests from the client
 app.post('/api/gemini', async (req, res) => {
